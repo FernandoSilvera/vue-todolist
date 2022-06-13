@@ -18,7 +18,7 @@ new Vue({
 
   data: {
     toDoList: toDo,
-    toDoText: "",
+    newToDoText: "",
   },
 
   methods: {
@@ -27,7 +27,7 @@ new Vue({
     },
     addItem(text) {
       this.toDoList.push({
-        text: text,
+        text: text.trim(),
         done: false,
       })
     },
