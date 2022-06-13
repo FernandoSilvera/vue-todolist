@@ -18,12 +18,18 @@ new Vue({
 
   data: {
     toDoList: toDo,
-    toDoIndex: 0,
+    toDoText: "",
   },
 
   methods: {
     delItem(index) {
       this.toDoList.splice(index, 1);
+    },
+    addItem(text) {
+      this.toDoList.push({
+        text: text,
+        done: false,
+      })
     },
   }
 })
