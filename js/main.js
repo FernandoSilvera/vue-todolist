@@ -26,10 +26,14 @@ new Vue({
       this.toDoList.splice(index, 1);
     },
     addItem(text) {
-      this.toDoList.push({
-        text: text.trim(),
-        done: false,
-      })
+      if(text === "") {
+        return;
+      } else {
+        this.toDoList.push({
+          text: text.trim(),
+          done: false,
+        })
+      }
     },
   }
 })

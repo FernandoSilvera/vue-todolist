@@ -26,8 +26,8 @@
           <div v-for="(item, i) in toDoList" class="row">
             <div class="col-10">
               <div class="form-check form-switch">
-                <input v-model="item.done" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" :class="{'text-decoration-line-through': item.done}" for="flexSwitchCheckDefault">{{ item.text }}</label>
+                <input v-model="item.done" class="form-check-input" type="checkbox" role="switch" :id="i">
+                <label class="form-check-label" :class="{'text-decoration-line-through': item.done}" :for="i">{{ item.text }}</label>
               </div>
             </div>
 
@@ -43,7 +43,7 @@
         <div class="add-wrapper">
           <div class="input-group mb-3">
             <input v-model="newToDoText" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button @click="addItem(newToDoText)" class="btn btn-outline-secondary" type="button" id="button-addon1">Add</button>
+            <button @click="addItem(newToDoText)" @keyup="addItem(newToDoText)" class="btn btn-outline-secondary" type="button" id="button-addon1">Add</button>
           </div>
         </div>
       </div>
