@@ -20,7 +20,7 @@
   <main>
     <div id="app">
       <div class="container">
-        <div class="todo-wrapper">
+        <div class="todo-wrapper py-5">
           
           <!-- Inserisci una row con 2 col per ogni item nella To Do List -->
           <div v-for="(item, i) in toDoList" class="row">
@@ -32,7 +32,10 @@
             </div>
 
             <div class="col-2">
-              <i class="fa-solid fa-trash-can"></i>
+              <button @click="delItem(i)">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+              
             </div>
           </div>
         </div>

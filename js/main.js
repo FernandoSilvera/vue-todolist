@@ -22,6 +22,8 @@ new Vue({
   },
 
   methods: {
-
+    delItem(index) {
+      this.toDoList.splice(index, 1);
+    },
   }
 })
